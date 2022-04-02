@@ -1,2 +1,3 @@
-# helpers
-enclose regular PHP functions in PHPStan compliant functions
+# PHP Helpers
+enclose and simplify regular PHP functions in PHPStan compliant functions
+
