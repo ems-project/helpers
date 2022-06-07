@@ -16,7 +16,7 @@ class Html
             'newline' => 'LF',
         ]);
 
-        return \str_replace(['<body>', '</body>', "\n  "], ['', '', "\n"], $formater->body()->value);
+        return \str_replace(["<body>\n  ", "\n</body>", "\n  "], ['', '', "\n"], $formater->body()->value);
     }
 
     public static function compare(?string $html1, ?string $html2): int
