@@ -25,4 +25,9 @@ class TypeTest extends TestCase
   </p>
 </div>', Html::prettyPrint('<div><h1>Title</h1><p>Hello</p></div>'));
     }
+
+    public function testEmptyPrettyPrint()
+    {
+        self::assertEquals('', Html::prettyPrint(''));
+    }
 }
