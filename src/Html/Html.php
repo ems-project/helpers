@@ -12,6 +12,7 @@ class Html
         $formater = new \tidy();
         $formater->parseString($source, [
             'indent' => true,
+            'newline' => 'LF',
         ]);
 
         return \str_replace(['<body>', '</body>', PHP_EOL.'  '], ['', '', PHP_EOL], $formater->body()->value);

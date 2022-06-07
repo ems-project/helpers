@@ -13,4 +13,18 @@ class TypeTest extends TestCase
     {
         self::assertEquals(0, Html::compare('   <p>Hello<p>', '<p>Hello<p>     '));
     }
+
+    public function testPrettyPrint()
+    {
+        self::assertEquals('
+  <div>
+    <h1>
+      Title
+    </h1>
+    <p>
+      Hello
+    </p>
+  </div>
+', Html::prettyPrint('<div><h1>Title</h1><p>Hello</p></div>'));
+    }
 }

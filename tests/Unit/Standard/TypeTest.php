@@ -12,5 +12,14 @@ class TypeTest extends TestCase
     public function testInt()
     {
         self::assertSame(11, Type::integer(11));
+        $this->expectException(\RuntimeException::class);
+        Type::integer('11');
+    }
+
+    public function testString()
+    {
+        self::assertSame('11', Type::string('11'));
+        $this->expectException(\RuntimeException::class);
+        Type::string(11);
     }
 }
