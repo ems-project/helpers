@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace EMS\Helpers\Tests\Unit\Html;
 
-use EMS\Helpers\html\Html;
+use EMS\Helpers\Html\Html;
 use PHPUnit\Framework\TestCase;
 
 class TypeTest extends TestCase

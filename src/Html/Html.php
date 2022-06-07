@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace EMS\Helpers\html;
+namespace EMS\Helpers\Html;
 
 class Html
 {
