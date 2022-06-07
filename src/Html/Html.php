@@ -12,10 +12,11 @@ class Html
         $formater = new \tidy();
         $formater->parseString($source, [
             'indent' => true,
+            'indent-spaces' => 2,
             'newline' => 'LF',
         ]);
 
-        return \str_replace(['<body>', '</body>', PHP_EOL.'  '], ['', '', PHP_EOL], $formater->body()->value);
+        return \str_replace(['<body>', '</body>', "\n  "], ['', '', "\n"], $formater->body()->value);
     }
 
     public static function compare(?string $html1, ?string $html2): int
