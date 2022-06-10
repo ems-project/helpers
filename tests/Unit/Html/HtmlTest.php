@@ -23,11 +23,22 @@ class TypeTest extends TestCase
   <p>
     Hello
   </p>
-</div>', Html::prettyPrint('<div><h1>Title</h1><p>Hello</p></div>'));
+</div>', Html::prettyPrint('<!-- comment --><div><h1>Title</h1><p>Hello</p></div>'));
     }
 
     public function testEmptyPrettyPrint()
     {
         self::assertEquals('', Html::prettyPrint(''));
+    }
+
+    public function testIsHtml()
+    {
+        self::assertEquals(false, Html::isHtml(''));
+        self::assertEquals(false, Html::isHtml(null));
+        self::assertEquals(false, Html::isHtml('Hello world'));
+        self::assertEquals(false, Html::isHtml('Hello world>>>'));
+        self::assertEquals(true, Html::isHtml('Hello <span>world</span>'));
+        self::assertEquals(true, Html::isHtml('Hello <span>world</span> <!-- comment -->'));
+        self::assertEquals(true, Html::isHtml('Hello <!-- comment -->'));
     }
 }
