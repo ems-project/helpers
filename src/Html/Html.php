@@ -25,8 +25,8 @@ class Html
         $html2 = $html2 ?? '';
         $formatterHtml1 = new \tidy();
         $formatterHtml1->parseString($html1);
-        $formaterHtml2 = new \tidy();
-        $formaterHtml2->parseString($html2);
+        $formatterHtml2 = new \tidy();
+        $formatterHtml2->parseString($html2);
 
         return \strcmp($formatterHtml1->html()->value, $formatterHtml1->html()->value);
     }
