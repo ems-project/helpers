@@ -6,16 +6,19 @@ namespace EMS\Helpers\Html;
 
 class Html
 {
-    public static function prettyPrint(?string $source): string
+    /**
+     * @param mixed[] $parseStringConfig
+     */
+    public static function prettyPrint(?string $source, array $parseStringConfig = []): string
     {
         $source = $source ?? '';
         $formatter = new \tidy();
-        $formatter->parseString($source, [
+        $formatter->parseString($source, \array_merge([
             'indent' => true,
             'indent-spaces' => 2,
             'newline' => 'LF',
             'wrap' => 0,
-        ]);
+        ], $parseStringConfig));
 
         return \str_replace(["<body>\n  ", "\n</body>", "\n  ", '<body>'], ['', '', "\n", ''], $formatter->body()->value);
     }
