@@ -26,6 +26,30 @@ class TypeTest extends TestCase
 </div>', Html::prettyPrint('<!-- comment --><div><h1>Title</h1><p>Hello</p></div>'));
     }
 
+    public function testPrettyPrintWithConfig()
+    {
+        self::assertEquals('<div>
+  <h1>
+    Foobar Foobar
+    Foobar Foobar
+    Foobar Foobar
+    Foobar Foobar
+    Foobar Foobar
+    Foobar Foobar
+    Foobar Foobar
+  </h1>
+  <p>
+    Foobar Foobar
+    Foobar Foobar
+    Foobar Foobar
+    Foobar Foobar
+    Foobar Foobar
+    Foobar Foobar
+    Foobar Foobar
+  </p>
+</div>', Html::prettyPrint('<!-- comment --><div><h1>Foobar Foobar Foobar Foobar Foobar Foobar Foobar Foobar Foobar Foobar Foobar Foobar Foobar Foobar</h1><p>Foobar Foobar Foobar Foobar Foobar Foobar Foobar Foobar Foobar Foobar Foobar Foobar Foobar Foobar</p></div>', ['wrap' => 20]));
+    }
+
     public function testEmptyPrettyPrint()
     {
         self::assertEquals('', Html::prettyPrint(''));
