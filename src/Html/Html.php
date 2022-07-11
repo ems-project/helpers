@@ -21,7 +21,7 @@ class Html
             'hide-comments' => 1,
         ], $parseStringConfig));
 
-        return \trim(\str_replace(["<body>\n  ", "\n</body>", "\n  ", '<body>'], ['', '', "\n", ''], $formatter->body()->value));
+        return \str_replace(["<body>\n  ", "\n</body>", "\n  ", '<body>'], ['', '', "\n", ''], $formatter->body()->value);
     }
 
     public static function compare(?string $html1, ?string $html2): int
