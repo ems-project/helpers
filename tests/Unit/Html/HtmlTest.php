@@ -26,6 +26,18 @@ class TypeTest extends TestCase
 </div>', Html::prettyPrint('<!-- comment --><div><h1>Title</h1><p>Hello</p></div>'));
     }
 
+    public function testPrettyPrintWithInternalComment()
+    {
+        self::assertEquals('<div>
+  <h1>
+    Title
+  </h1>
+  <p>
+    Hello
+  </p>
+</div>', Html::prettyPrint('<div><h1>Title</h1><p>Hello<!--[if IE 6]>Special instructions for IE 6 here<![endif]--></p></div>'));
+    }
+
     public function testPrettyPrintWithConfig()
     {
         self::assertEquals('<div>
@@ -52,7 +64,7 @@ class TypeTest extends TestCase
 
     public function testEmptyPrettyPrint()
     {
-        self::assertEquals('', Html::prettyPrint(''));
+        self::assertEquals(PHP_EOL, Html::prettyPrint(''));
     }
 
     public function testIsHtml()

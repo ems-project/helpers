@@ -18,6 +18,7 @@ class Html
             'indent-spaces' => 2,
             'newline' => 'LF',
             'wrap' => 0,
+            'hide-comments' => 1,
         ], $parseStringConfig));
 
         return \str_replace(["<body>\n  ", "\n</body>", "\n  ", '<body>'], ['', '', "\n", ''], $formatter->body()->value);
