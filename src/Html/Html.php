@@ -17,7 +17,7 @@ class Html
             'indent' => true,
             'indent-spaces' => 2,
             'newline' => 'LF',
-            'wrap' => 0,
+            'wrap' => 68,
             'hide-comments' => 1,
         ], $parseStringConfig));
 
