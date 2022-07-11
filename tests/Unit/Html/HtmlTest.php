@@ -64,7 +64,7 @@ class TypeTest extends TestCase
 
     public function testEmptyPrettyPrint()
     {
-        self::assertEquals(PHP_EOL, Html::prettyPrint(''));
+        self::assertEquals('', Html::prettyPrint(''));
     }
 
     public function testIsHtml()
