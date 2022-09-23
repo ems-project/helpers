@@ -7,4 +7,5 @@ namespace EMS\Helpers\ArrayHelper;
 class ArrayHelper
 {
     use FindHelperTrait;
+    use MapHelperTrait;
 }
